@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>first calculator</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: beige;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+         
+        }
+     
+        .calculator{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 150px;
+            background-color: rgb(43, 40, 40);
+            padding: 17px;
+            
+        }
+        .row1{
+            display: flex;
+            flex-direction: row;
+           
+            
+        }
+        .row2{
+            display: flex;
+            flex-direction: row;
+           
+        }
+        .row3{
+            display: flex;
+            flex-direction: row;
+        
+        }
+        .row4{
+            display: flex;
+            flex-direction: row;
+           
+        }
+        .row5{
+            display: flex;
+            flex-direction: row;
+           
+        }
+        .row6{
+            display: flex;
+            flex-direction: column;
+            
+        }
+        .row1 button{
+            height: 30px;
+            width: 40px;
+            background-color: rgb(9, 12, 11);
+            margin: 1px;
+            color: aliceblue;
+            border-radius: 15px;
+           box-shadow: 0 0 5px rgb(253, 242, 242);
+           margin: 5px;
+        }
+        .row2 button{
+            height: 30px;
+            width: 40px;
+            background-color: rgb(7, 8, 8);
+            margin: 1px;
+            color: aliceblue;
+            border-radius: 15px;
+            box-shadow: 0 0 3px rgb(253, 242, 242);
+            margin: 5px;
+           
+        }
+        .row3 button{
+            height: 30px;
+            width: 40px;
+            background-color: rgb(5, 8, 7);
+            margin: 1px;
+            color: aliceblue;
+            border-radius: 15px;
+            box-shadow: 0 0 3px rgb(253, 242, 242);
+            margin: 5px;
+           
+        }
+        .row4 button{
+            height: 30px;
+            width: 40px;
+            background-color: rgb(9, 12, 11);
+            margin: 1px;
+            color: aliceblue;
+            border-radius: 15px;
+            box-shadow: 0 0 3px rgb(253, 242, 242);
+            margin: 5px;
+           
+        }
+        .row5 button{
+            height: 30px;
+            width: 40px;
+            background-color: rgb(8, 10, 10);
+            margin: 1px;
+            color: aliceblue;
+            border-radius: 15px;
+            box-shadow: 0 0 3px rgb(253, 242, 242);
+            margin: 5px;
+           
+        }
+        .row6 button{
+            height: 30px;
+            width: 40px;
+            background-color: rgb(6, 7, 7);
+            margin: 1px;
+            color: aliceblue;
+            border-radius: 20px;
+            box-shadow: 0 0 3px rgb(253, 242, 242);
+            margin: 5px;
+           
+        }
+        .row{
+            display: flex;
+            flex-direction: row;
+            /* padding: 10px; */
+        }
+        
+    
+        #scr{
+            height: 60px;
+            width: 183px;
+            background-color: rgb(250, 236, 236);
+            margin-bottom: 10px;
+            box-shadow: 0 0 3px rgb(253, 242, 242);
+            color: rgb(15, 15, 15);
+            font-size: 25px;
+         
+        }
+
+        #equal{
+            height: 70px;
+            width: 35px;
+            background-color: rgb(7, 6, 6);
+            /* box-shadow: 0 0 3px rgb(253, 242, 242); */
+        }
+      
+
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="screen">
+            <input type="text" id="scr" value="">
+        </div>
+        <div class="row">
+            <div class="ro">
+        <div class="row1">
+            <button class="button" value="AC" onclick="clr()">AC</button>
+            <button class="button" value="/" onclick="numbe('/')">/</button>
+            <button class="button" value="x"  onclick="numbe('*')">x</button>
+
+        </div>
+        <div class="row2">
+            <button class="button" value="7" onclick="numbe(7)">7</button>
+            <button class="button" value="8" onclick="numbe(8)">8</button>
+            <button class="button" value="9" onclick="numbe(9)">9</button>
+            
+        </div>
+        <div class="row3">
+            <button class="button" value="4" onclick="numbe(4)">4</button>
+            <button class="button" value="5"  onclick="numbe(5)">5</button>
+            <button class="button" value="6" onclick="numbe(6)">6</button>
+        </div>
+        <div class="row4" >
+            <button class="button"  value="1" onclick="numbe(1)">1</button>
+            <button class="button" value="2"  onclick="numbe(2)">2</button>
+            <button class="button"  value="3" onclick="numbe(3)">3</button>
+            
+        </div>
+        <div class="row5" >
+            <button class="button" value="%" onclick="numbe('%')">%</button>
+            <button class="button" value="0" onclick="numbe(0)">0</button>
+            <button class="button" value="." onclick="numbe('.')">.</button>
+        </div>
+        </div>
+        <div class="row6" id="equ">
+            <button class="button" onclick="del()">Del</button>
+            <button class="button" value="-" onclick="numbe('-')">-</button>
+            <button class="button" value="+" onclick="numbe('+')">+</button>
+            <button class="button" id="equal" value="=" onclick="operate('=')">=</button>
+        </div>
+    </div>
+      
+    </div>
+    <script>
+        function numbe(val){
+            document.getElementById('scr').value +=val
+        }
+        function operate(){
+            var x=document.getElementById('scr').value
+            var y=eval(x)
+            document.getElementById('scr').value=y
+        }
+        function clr(){
+            document.getElementById('scr').value =" "
+        }
+        function del(){
+            let dele=document.getElementById('scr')
+            dele.value=dele.value.slice(0,-1)
+        }
+
+    </script>
+    
+</body>
+  
+   
+    
+    
+
+
+</html>
